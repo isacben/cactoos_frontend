@@ -73,7 +73,12 @@
             }
                 
 
-            let row = `<td>${json[i].code}</td>
+            let row = `
+                <td>
+                    <a target="_blank" href="${['https://www.odoo.com/web#id=', json[i].id, '&action=2564&model=sale.subscription&view_type=form&cids=3&menu_id=5282'].join('')}">
+                        ${json[i].code}
+                    </a>
+                </td>
                 <td>${json[i].enterprise_final_customer_id !== false ? json[i].enterprise_final_customer_id[1].substring(0, 25) : json[i].partner_id[1].substring(0, 25)}</td>
                 <td>${json[i].referrer_id !== false ? json[i].referrer_id[1].substring(0, 25) : ''}</td>
                 <td>${json[i].upsell_date !== false ? json[i].upsell_date : 'not set'}</td>`;
